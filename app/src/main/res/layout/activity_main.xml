@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tamc.eligebien_100.MainActivity">
+    tools:context="com.toqu3.eligebien.MainActivity">
 
     <com.flaviofaria.kenburnsview.KenBurnsView
         android:id="@+id/image"

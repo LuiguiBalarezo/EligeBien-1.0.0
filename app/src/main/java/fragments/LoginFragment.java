@@ -3,18 +3,20 @@ package fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.tamc.eligebien_100.R;
+import com.toqu3.eligebien.R;
 
 import BaseClass.BaseFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import callbacks.LoginListener;
+import com.facebook.FacebookSdk;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,35 +35,6 @@ public class LoginFragment extends BaseFragment {
     Button btn_sign_in;
     @Bind(R.id.btn_sign_in_anonimous)
     Button btn_sign_anonimous;
-
-    public LoginFragment() {
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            loginListener = (LoginListener) mContext;
-            mContext = getActivity();
-        } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + " must implement OnHeadlineSelectedListener ");
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_login, container, false);
-        ButterKnife.bind(this, view);
-        setOnClickListeners(onClickListener,
-                btn_sign_up_email,
-                btn_face, btn_google,
-                btn_sign_in,
-                btn_sign_anonimous);
-
-        return view;
-    }
-
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -84,5 +57,39 @@ public class LoginFragment extends BaseFragment {
             }
         }
     };
+
+    public LoginFragment() {
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            loginListener = (LoginListener) mContext;
+            mContext = getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement OnHeadlineSelectedListener ");
+        }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_login, container, false);
+        ButterKnife.bind(this, view);
+        setOnClickListeners(onClickListener,
+                btn_sign_up_email,
+                btn_face, btn_google,
+                btn_sign_in,
+                btn_sign_anonimous);
+
+        return view;
+    }
 
 }

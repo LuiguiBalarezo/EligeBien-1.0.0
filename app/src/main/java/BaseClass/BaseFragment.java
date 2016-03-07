@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tamc.eligebien_100.MainActivity;
+import com.toqu3.eligebien.MainActivity;
 
 /**
  * Created by BALAREZO on 06/03/2016.
@@ -48,8 +48,8 @@ public class BaseFragment extends Fragment{
     }
 
     public void setOnClickListeners(View.OnClickListener clickListener,View... view){
-        for(int i = 0 ; i < view.length; i++){
-            view[i].setOnClickListener(clickListener);
+        for (View aView : view) {
+            aView.setOnClickListener(clickListener);
         }
     }
 

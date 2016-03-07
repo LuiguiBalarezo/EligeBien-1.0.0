@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.tamc.eligebien_100.R;
+import com.toqu3.eligebien.R;
 
 /**
  * Created by BALAREZO on 06/03/2016.

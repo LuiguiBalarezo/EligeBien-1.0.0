@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.tamc.eligebien_100.R;
+import com.toqu3.eligebien.R;
 
 import BaseClass.BaseFragment;
 
