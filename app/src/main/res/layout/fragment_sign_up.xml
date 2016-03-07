@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rltv_base_container_sign_up_email"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.SignUpFragment">
+
+    <include layout="@layout/includetoolbar"/>
+
+    <RelativeLayout
+        android:id="@+id/rltv_content_sign_up_email"
+        style="@style/style_rltv_content_form"
+        android:layout_below="@id/img_logo"
+        android:layout_centerVertical="true"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/edt_name"
+            style="@style/edittext"
+            android:hint="@string/name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            style="@style/edittext"
+            android:layout_below="@id/edt_name"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/edt_year"
+            style="@style/edittext"
+            android:layout_below="@id/edt_email"
+            android:hint="0"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edt_password"
+            style="@style/edittext"
+            android:layout_below="@id/edt_year"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_create_account"
+            style="@style/button_primary"
+            android:layout_below="@id/edt_password"
+            android:text="@string/create_account" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

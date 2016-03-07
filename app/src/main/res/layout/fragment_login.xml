@@ -1,0 +1,165 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rltv_container_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context="layout.LoginFragment">
+
+    <RelativeLayout
+        android:id="@+id/Rltv_container_Login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:visibility="visible"
+            android:id="@+id/img_logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="95dp"
+            android:layout_marginTop="@dimen/margin_top_img_logo"
+            android:background="@drawable/background_logo"
+            android:contentDescription="@string/logo" />
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/rltv_contanier_buttons_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_logo"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btn_sign_up_with_email"
+                style="@style/button_primary"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:text="@string/sign_up_with_email" />
+
+            <RelativeLayout
+                android:id="@+id/rtl_or"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/btn_sign_up_with_email"
+                android:layout_alignLeft="@+id/btn_sign_up_with_email"
+                android:layout_alignRight="@+id/btn_sign_up_with_email"
+                android:layout_alignStart="@+id/btn_sign_up_with_email"
+                android:layout_below="@id/btn_sign_up_with_email"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/txt_or"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/or"
+                    android:textColor="@android:color/background_light" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/txt_or"
+                    android:layout_toRightOf="@+id/txt_or"
+                    android:background="@android:color/background_light" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/txt_or"
+                    android:layout_toStartOf="@+id/txt_or"
+                    android:background="@android:color/background_light" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ln_btn_network"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/rtl_or"
+                android:layout_alignLeft="@+id/rtl_or"
+                android:layout_alignRight="@+id/rtl_or"
+                android:layout_alignStart="@+id/rtl_or"
+                android:layout_below="@+id/rtl_or"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_face"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_selector_effect_blue"
+                    android:text="Facebook"
+                    android:textColor="@android:color/background_light" />
+
+                <Button
+                    android:id="@+id/btn_google"
+                    android:layout_width="0dp"
+                    android:background="@drawable/button_selector_effect_red"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="Google"
+                    android:textColor="@android:color/background_light" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ln_btn_network"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/txt_separator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="|"
+                    android:textColor="@android:color/background_light" />
+
+                <Button
+                    android:id="@+id/btn_sign_in_with_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/txt_separator"
+                    android:background="@android:color/transparent"
+                    android:text="@string/sign_in_with_email"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btn_sign_in_anonimous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/txt_separator"
+                    android:background="@android:color/transparent"
+                    android:text="@string/sign_in_anonimous"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+

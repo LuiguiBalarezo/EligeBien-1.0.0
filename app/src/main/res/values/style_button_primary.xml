@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="button_primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:textColor">@android:color/background_light</item>
+        <item name="android:background">@drawable/button_selector_effect_lightblue</item>
+    </style>
+
+</resources>
