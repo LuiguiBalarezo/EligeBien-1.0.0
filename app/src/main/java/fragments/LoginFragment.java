@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -106,23 +108,31 @@ public class LoginFragment extends BaseFragment {
         loginButton.setReadPermissions("user_friends");
         loginButton.setFragment(this);
         loginButton.registerCallback(callbackManager, facebookCallback );
+//        accessToken = AccessToken.getCurrentAccessToken();
     }
 
 
     FacebookCallback facebookCallback = new FacebookCallback() {
         @Override
         public void onSuccess(Object o) {
-            Log.d("onSuccess", "onSuccess " +  o );
+            Log.d("onSuccess ++++++", "onSuccess " +  o );
         }
 
         @Override
         public void onCancel() {
-            Log.d("onCancel", "onCancel ");
+            Log.d("onCancel ++++++", "onCancel ");
         }
 
         @Override
         public void onError(FacebookException error) {
-            Log.d("onError", "onError " +  error);
+            Log.d("onError ++++++", "onError " +  error);
+        }
+    };
+
+    AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
+        @Override
+        protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+
         }
     };
 
