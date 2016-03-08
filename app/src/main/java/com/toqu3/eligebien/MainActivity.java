@@ -86,6 +86,7 @@ public class MainActivity extends BaseAppCompatActivity implements LoginListener
 
     }
 
+    /*cUSTOM vIEWS*/
     KenBurnsView.TransitionListener transitionListener = new KenBurnsView.TransitionListener() {
         @Override
         public void onTransitionStart(Transition transition) {

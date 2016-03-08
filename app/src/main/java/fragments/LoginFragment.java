@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -120,12 +121,12 @@ public class LoginFragment extends BaseFragment {
 
         @Override
         public void onCancel() {
-            Log.d("onCancel ++++++", "onCancel ");
+            Toast.makeText(getContext(), "Cancel", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onError(FacebookException error) {
-            Log.d("onError ++++++", "onError " +  error);
+            Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
         }
     };
 
