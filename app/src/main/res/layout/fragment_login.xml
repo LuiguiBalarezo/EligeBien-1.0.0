@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+
         <ImageView
             android:visibility="visible"
             android:id="@+id/img_logo"
@@ -96,7 +98,18 @@
                 <Button
                     android:id="@+id/btn_face"
                     android:layout_width="0dp"
+                    android:visibility="gone"
                     android:layout_height="50dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_selector_effect_blue"
+                    android:text="Facebook"
+                    android:textColor="@android:color/background_light" />
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/login_button"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_selector_effect_blue"

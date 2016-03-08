@@ -5,11 +5,17 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.widget.LoginButton;
 import com.toqu3.eligebien.R;
 
 import BaseClass.BaseFragment;
@@ -35,6 +41,92 @@ public class LoginFragment extends BaseFragment {
     Button btn_sign_in;
     @Bind(R.id.btn_sign_in_anonimous)
     Button btn_sign_anonimous;
+
+    LoginButton loginButton;
+    CallbackManager callbackManager;
+
+    public LoginFragment() {
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            loginListener = (LoginListener) mContext;
+            mContext = getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement OnHeadlineSelectedListener ");
+        }
+    }
+
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
+        callbackManager = CallbackManager.Factory.create();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        AppEventsLogger.activateApp(getActivity());
+
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        AppEventsLogger.deactivateApp(getActivity());
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_login, container, false);
+
+        initSdkFacebook();
+
+        setOnClickListeners(onClickListener,
+                btn_sign_up_email,
+                btn_face, btn_google,
+                btn_sign_in,
+                btn_sign_anonimous);
+
+        return view;
+    }
+
+    private void initSdkFacebook(){
+        loginButton = (LoginButton)view.findViewById(R.id.login_button);
+        ButterKnife.bind(this, view);
+        loginButton.setReadPermissions("user_friends");
+        loginButton.setFragment(this);
+        loginButton.registerCallback(callbackManager, facebookCallback );
+    }
+
+
+    FacebookCallback facebookCallback = new FacebookCallback() {
+        @Override
+        public void onSuccess(Object o) {
+            Log.d("onSuccess", "onSuccess " +  o );
+        }
+
+        @Override
+        public void onCancel() {
+            Log.d("onCancel", "onCancel ");
+        }
+
+        @Override
+        public void onError(FacebookException error) {
+            Log.d("onError", "onError " +  error);
+        }
+    };
+
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -58,38 +150,5 @@ public class LoginFragment extends BaseFragment {
         }
     };
 
-    public LoginFragment() {
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            loginListener = (LoginListener) mContext;
-            mContext = getActivity();
-        } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + " must implement OnHeadlineSelectedListener ");
-        }
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_login, container, false);
-        ButterKnife.bind(this, view);
-        setOnClickListeners(onClickListener,
-                btn_sign_up_email,
-                btn_face, btn_google,
-                btn_sign_in,
-                btn_sign_anonimous);
-
-        return view;
-    }
 
 }
