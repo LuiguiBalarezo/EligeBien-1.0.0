@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_id": "elige-bien",
+    "project_number": "595621689211",
+    "name": "Elige Bien"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595621689211:android:2b7cd86bc61451df",
+        "client_id": "android:com.toqu3.eligebien",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.toqu3.eligebien",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595621689211-nt8p57nj16l7itgl6ao5hc0el3jb5pro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.toqu3.eligebien",
+            "certificate_hash": "E20F2DAD3919BB63A67741E9F2A9D0154E8C56F7"
+          }
+        },
+        {
+          "client_id": "595621689211-4l3p9mn7mqa87ao1rrr4jg7071uj8h66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

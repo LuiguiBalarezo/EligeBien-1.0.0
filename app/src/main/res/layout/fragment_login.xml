@@ -11,10 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
         <ImageView
-            android:visibility="visible"
             android:id="@+id/img_logo"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -23,15 +20,16 @@
             android:layout_marginBottom="95dp"
             android:layout_marginTop="@dimen/margin_top_img_logo"
             android:background="@drawable/background_logo"
-            android:contentDescription="@string/logo" />
+            android:contentDescription="@string/logo"
+            android:visibility="visible" />
 
         <RelativeLayout
-            android:visibility="visible"
             android:id="@+id/rltv_contanier_buttons_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/img_logo"
-            android:gravity="bottom">
+            android:gravity="bottom"
+            android:visibility="visible">
 
             <Button
                 android:id="@+id/btn_sign_up_with_email"
@@ -98,7 +96,6 @@
                 <Button
                     android:id="@+id/btn_face"
                     android:layout_width="0dp"
-                    android:visibility="gone"
                     android:layout_height="50dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
@@ -106,23 +103,23 @@
                     android:text="Facebook"
                     android:textColor="@android:color/background_light" />
 
-                <com.facebook.login.widget.LoginButton
-                    android:id="@+id/login_button"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_selector_effect_blue"
-                    android:text="Facebook"
-                    android:textColor="@android:color/background_light" />
+                <!--<com.google.android.gms.common.SignInButton-->
+                    <!--android:id="@+id/a"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="50dp"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/button_selector_effect_red"-->
+                    <!--android:text="Google"-->
+                    <!--android:textColor="@android:color/background_light" />-->
 
                 <Button
                     android:id="@+id/btn_google"
                     android:layout_width="0dp"
-                    android:background="@drawable/button_selector_effect_red"
                     android:layout_height="50dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button_selector_effect_red"
                     android:text="Google"
                     android:textColor="@android:color/background_light" />
 
